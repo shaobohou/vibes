@@ -1,0 +1,20 @@
+{
+	"name": "Claude Code Environment",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts"
+		}
+	},
+	"postCreateCommand": "curl -fsSL https://claude.ai/code/install | bash && echo 'export CLAUDE_AUTH_MODE=api_key' >> ~/.bashrc",
+	"remoteEnv": {
+		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.copilot"
+			]
+		}
+	}
+}
