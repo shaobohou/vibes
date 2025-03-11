@@ -6,7 +6,8 @@
 			"version": "lts"
 		}
 	},
-	"postCreateCommand": "curl -fsSL https://claude.ai/code/install | bash && echo 'export CLAUDE_AUTH_MODE=api_key' >> ~/.bashrc",
+	"postCreateCommand": "curl -fsSL https://claude.ai/code/install | bash && echo 'export CLAUDE_AUTH_MODE=api_key' >> ~/.bashrc && chmod +x .devcontainer/check-api-key.sh",
+	"postStartCommand": ".devcontainer/check-api-key.sh",
 	"remoteEnv": {
 		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
 	},
@@ -14,7 +15,10 @@
 		"vscode": {
 			"extensions": [
 				"github.copilot"
-			]
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			}
 		}
 	}
 }
