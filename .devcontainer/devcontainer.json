@@ -6,10 +6,13 @@
 			"version": "lts"
 		}
 	},
-	"postCreateCommand": "npm install -g @anthropic-ai/claude-code && echo 'export CLAUDE_AUTH_MODE=api_key' >> ~/.bashrc && chmod +x .devcontainer/check-api-key.sh",
+	"postCreateCommand": "npm install -g @anthropic-ai/claude-code && chmod +x .devcontainer/check-api-key.sh",
 	"postStartCommand": ".devcontainer/check-api-key.sh",
 	"remoteEnv": {
 		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+	},
+	"containerEnv": {
+		"CLAUDE_AUTH_MODE": "api_key"
 	},
 	"customizations": {
 		"vscode": {
