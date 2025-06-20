@@ -15,6 +15,14 @@ A repository with GitHub Codespaces configuration that includes Claude Code with
 
 4. Launch your Codespace - you'll see a prompt if the API key isn't set
 
+## Development Environment
+
+The dev container is configured with:
+- Node.js version 20.
+- `@anthropic-ai/claude-code` CLI tool.
+- ShellCheck for shell script linting.
+- Prettier for code formatting.
+
 ## Using Claude Code
 
 Once your Codespace is set up with your API key, simply use Claude Code with:
