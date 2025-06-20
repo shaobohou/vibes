@@ -29,6 +29,20 @@ Or with a specific question:
 claude "What does this repository do?"
 ```
 
+## GitHub Integration Setup
+
+To enable Claude Code GitHub integration for automated issue and PR responses:
+
+1. **Add API Key to Repository Secrets**:
+   - Go to your repository's Settings → Secrets and variables → Actions
+   - Click "New repository secret"
+   - Name: `ANTHROPIC_API_KEY`
+   - Value: Your API key from [Anthropic Console](https://console.anthropic.com/keys)
+
+2. **Add GitHub Workflow**:
+   - Copy the `claude.yml` workflow file to `.github/workflows/claude.yml` in your repository
+   - This enables Claude to respond to `@claude` mentions in issues and pull requests
+
 ## Troubleshooting
 
 If you see a warning about missing API key when the Codespace starts:
