@@ -3,10 +3,16 @@
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
-			"version": "lts"
+			"version": "20"
+		},
+		"ghcr.io/devcontainers-contrib/features/shellcheck:1": {},
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": "false",
+			"installOhMyZsh": "false",
+			"upgradePackages": "true"
 		}
 	},
-	"postCreateCommand": "npm install -g @anthropic-ai/claude-code && chmod +x .devcontainer/check-api-key.sh",
+	"postCreateCommand": "npm install -g @anthropic-ai/claude-code prettier && chmod +x .devcontainer/check-api-key.sh",
 	"postStartCommand": ".devcontainer/check-api-key.sh",
 	"remoteEnv": {
 		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"

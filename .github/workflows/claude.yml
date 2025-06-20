@@ -12,6 +12,12 @@ on:
 
 jobs:
   claude-code-action:
+    # This condition restricts Claude execution to only the repository owner.
+    # This is a security measure to prevent unauthorized users from triggering the action.
+    # If you want to allow collaborators or other users to trigger Claude,
+    # you might want to adjust or remove `github.actor == github.repository_owner`.
+    # For example, to allow any user with write access: `github.event.comment.author_association == 'COLLABORATOR' || github.event.comment.author_association == 'OWNER'`
+    # Ensure you understand the security implications before changing this.
     if: |
       github.actor == github.repository_owner && (
         (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude')) ||

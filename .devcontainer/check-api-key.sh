@@ -18,7 +18,7 @@ if [ -z "${ANTHROPIC_API_KEY}" ]; then
   echo "export ANTHROPIC_API_KEY=your-api-key-here"
   echo ""
   echo "After setting the API key, restart your terminal or run: source ~/.bashrc"
-  exit 1
+  # exit 1 # Removed to prevent shell interruption
 else
   echo "✅ ANTHROPIC_API_KEY is set"
   echo "Claude Code is ready to use. Try running: claude"
