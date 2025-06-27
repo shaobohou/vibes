@@ -1,6 +1,6 @@
 # Vibes
 
-A repository with GitHub Codespaces configuration that includes Claude Code with API key authentication.
+A repository with GitHub Codespaces configuration that includes Claude Code and Gemini CLI for AI development.
 
 ## Setup
 
@@ -27,6 +27,20 @@ Or with a specific question:
 
 ```bash
 claude "What does this repository do?"
+```
+
+## Using Gemini CLI
+
+This environment also includes Google's Gemini CLI for AI development. Once your Codespace is set up, you can use:
+
+```bash
+gemini --help
+```
+
+To get started with Gemini CLI, you'll need to authenticate with your Google account:
+
+```bash
+gemini auth login
 ```
 
 ## GitHub Integration Setup
