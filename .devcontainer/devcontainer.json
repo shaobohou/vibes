@@ -6,7 +6,7 @@
 			"version": "lts"
 		}
 	},
-	"postCreateCommand": "npm install -g @anthropic-ai/claude-code && chmod +x .devcontainer/check-api-key.sh",
+	"postCreateCommand": "npm install -g @anthropic-ai/claude-code @google/gemini-cli && chmod +x .devcontainer/check-api-key.sh",
 	"postStartCommand": ".devcontainer/check-api-key.sh",
 	"remoteEnv": {
 		"ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
